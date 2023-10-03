@@ -1,4 +1,4 @@
-node_modules
-build
-dist
-parcel-cache
+/node_modules
+/build
+/dist
+/parcel-cache
