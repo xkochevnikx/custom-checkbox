@@ -1,6 +1,13 @@
 :root {
     --border-radius: 5rem;
     --primary-color: black;
-    --bg-checkbox: rgb(1 65 255 / 30%);
-    --bg-checkbox-before: white;
+    --switch-item-number: 3;
+    --switch-padding: 5px;
+    --switch-bg: #fff;
+    --switch-border-width: 0.1rem;
+    --switch-border-color: #ccc;
+    --switch-border-radius: 5rem;
+    --switch-label-padding: 1.5rem 0.5rem;
+    --switch-active-text-color: #fff;
+    --switch-active-bg-color: #350792;
 }

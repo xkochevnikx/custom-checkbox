@@ -1,0 +1,92 @@
+.radioSwitch {
+    display: flex;
+    position: relative;
+    padding: 0;
+    outline: 0;
+    border: var(--switch-border-width) solid var(--primary-color);
+    background-color: var(--switch-bg);
+    border-radius: var(--switch-border-radius);
+    width: 100%;
+}
+
+.radioSwitch input {
+    display: none;
+}
+
+.radioSwitch label {
+    z-index: 1;
+    padding: var(--switch-label-padding);
+    border-radius: var(--switch-border-radius);
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+.radioSwitch input:checked + label {
+    color: var(--switch-active-text-color);
+}
+
+.radioSwitch label,
+.highlight {
+    width: calc(100% / var(--switch-item-number));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: 300ms transform ease-in-out;
+}
+
+.highlight {
+    position: absolute;
+    background-color: var(--switch-active-bg-color);
+    top: calc(var(--switch-padding) / 2);
+    left: calc(var(--switch-padding) / 2);
+    bottom: 0;
+    right: 0;
+    border-radius: var(--switch-border-radius);
+    height: calc(100% - var(--switch-padding));
+    width: calc(
+        (100% / var(--switch-item-number)) -
+            calc(var(--switch-padding) / var(--switch-item-number))
+    );
+}
+
+/* Moving Highliht*/
+.radioSwitch input:nth-of-type(2):checked ~ .highlight {
+    transform: translateX(100%);
+}
+
+.radioSwitch input:nth-of-type(3):checked ~ .highlight {
+    transform: translateX(200%);
+}
+
+.radioSwitch input:nth-of-type(4):checked ~ .highlight {
+    transform: translateX(300%);
+}
+
+@media screen and (max-width: 767px) {
+    .radioSwitch {
+        --switch-border-radius: 15px;
+        flex-direction: column;
+    }
+
+    .highlight,
+    .radioSwitch label {
+        width: calc(100% - var(--switch-padding));
+        height: calc(
+            (100% / var(--switch-item-number)) -
+                calc(var(--switch-padding) / var(--switch-item-number))
+        );
+    }
+
+    .radioSwitch input:nth-of-type(2):checked ~ .highlight {
+        transform: translateY(100%);
+    }
+
+    .radioSwitch input:nth-of-type(3):checked ~ .highlight {
+        transform: translateY(200%);
+    }
+
+    .radioSwitch input:nth-of-type(4):checked ~ .highlight {
+        transform: translateY(300%);
+    }
+}
