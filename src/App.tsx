@@ -9,7 +9,9 @@ export type FormValues = {
 };
 
 export function App() {
-    const {} = useForm();
+    const { handleSubmit, register } = useForm();
+
+    const onSubmit = handleSubmit((data) => console.log(data));
 
     const items = [
         {
@@ -38,8 +40,8 @@ export function App() {
         <>
             <div className={classNames('container', {}, [])}>
                 <h1>Hello Form!</h1>
-                <Form>
-                    <TextCheckbox items={items} />
+                <Form onSubmit={onSubmit}>
+                    <TextCheckbox items={items} register={register} />
                     <MyButton type="submit" theme={ThemeButton.OUTLINE}>
                         Test
                     </MyButton>

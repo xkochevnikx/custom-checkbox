@@ -1,18 +1,20 @@
-import { Fragment } from 'react';
+import { Fragment, InputHTMLAttributes } from 'react';
 import { classNames } from '../helpers/classnames';
 import cls from './TextCheckbox.module.css';
+import { FieldValues, UseFormRegister, useForm } from 'react-hook-form';
 
 type itemRadio = {
     label: string;
     value: string;
 };
 
-interface ITextCheckboxProps {
+interface ITextCheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
     items: itemRadio[];
+    register: UseFormRegister<FieldValues>;
 }
 
 export const TextCheckbox = (props: ITextCheckboxProps) => {
-    const { items } = props;
+    const { items, register } = props;
 
     return (
         <fieldset className={classNames(cls.radioSwitch, {}, [])}>
@@ -20,8 +22,8 @@ export const TextCheckbox = (props: ITextCheckboxProps) => {
                 ? items.map(({ label, value }) => (
                       <Fragment key={value}>
                           <input
+                              {...register('string')}
                               type="radio"
-                              name="switch"
                               id={value}
                               value={value}
                           />

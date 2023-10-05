@@ -6,10 +6,11 @@ export interface IForm extends FormHTMLAttributes<HTMLFormElement> {
     children: ReactNode;
 }
 export const Form = (props: IForm) => {
-    const { children, ...otherProps } = props;
+    const { children, onSubmit, ...otherProps } = props;
 
     return (
         <form
+            onSubmit={onSubmit}
             className={classNames(cls.Form, {}, [])}
             {...otherProps}
             noValidate

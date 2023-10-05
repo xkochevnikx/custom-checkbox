@@ -1,11 +1,11 @@
 .radioSwitch {
     display: flex;
     position: relative;
-    outline: 0;
+    width: 100%;
     border: var(--switch-border-width) solid var(--primary-color);
     background-color: var(--switch-bg);
     border-radius: var(--switch-border-radius);
-    width: 100%;
+    outline: 0;
 }
 
 .radioSwitch input {
@@ -13,16 +13,15 @@
 }
 
 .radioSwitch label {
-    z-index: 1;
-    padding: var(--switch-label-padding);
-    border-radius: var(--switch-border-radius);
-    cursor: pointer;
-    color: var(--primary-color);
-    width: calc(100% / var(--switch-item-number));
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    width: calc(100% / var(--switch-item-number));
+    z-index: 1;
+    padding: var(--switch-label-padding);
+    cursor: pointer;
+    color: var(--primary-color);
 }
 
 .radioSwitch input:checked + label {
