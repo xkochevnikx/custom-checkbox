@@ -2,16 +2,15 @@ import { MyButton, ThemeButton } from './MyButton/MyButton';
 import { classNames } from './helpers/classnames';
 import { Form } from './Form/Form';
 import { useForm } from 'react-hook-form';
-import { TextCheckbox } from './TextCheckbox/TextCheckbox';
-
-export type FormValues = {
-    string?: string;
-};
+import { TextRadio } from './TextRadio/TextRadio';
+import { useState } from 'react';
 
 export function App() {
     const { handleSubmit, register } = useForm();
 
-    const onSubmit = handleSubmit((data) => console.log(data));
+    const [selected, setSelected] = useState<string>('');
+
+    const onSubmit = handleSubmit((e) => setSelected(e.string));
 
     const items = [
         {
@@ -39,9 +38,10 @@ export function App() {
     return (
         <>
             <div className={classNames('container', {}, [])}>
-                <h1>Hello Form!</h1>
+                <h1>input radio for Igor</h1>
+                <h3>value of the radio input selected {selected} </h3>
                 <Form onSubmit={onSubmit}>
-                    <TextCheckbox items={items} register={register} />
+                    <TextRadio items={items} register={register} />
                     <MyButton type="submit" theme={ThemeButton.OUTLINE}>
                         Test
                     </MyButton>

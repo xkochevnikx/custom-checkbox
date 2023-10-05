@@ -1,6 +1,6 @@
 import { Fragment, InputHTMLAttributes } from 'react';
 import { classNames } from '../helpers/classnames';
-import cls from './TextCheckbox.module.css';
+import cls from './TextRadio.module.css';
 import { FieldValues, UseFormRegister, useForm } from 'react-hook-form';
 
 type itemRadio = {
@@ -13,7 +13,7 @@ interface ITextCheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
     register: UseFormRegister<FieldValues>;
 }
 
-export const TextCheckbox = (props: ITextCheckboxProps) => {
+export const TextRadio = (props: ITextCheckboxProps) => {
     const { items, register } = props;
 
     return (
