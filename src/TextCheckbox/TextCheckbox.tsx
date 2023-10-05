@@ -1,30 +1,35 @@
+import { Fragment } from 'react';
 import { classNames } from '../helpers/classnames';
 import cls from './TextCheckbox.module.css';
 
-export const TextCheckbox = () => {
+type itemRadio = {
+    label: string;
+    value: string;
+};
+
+interface ITextCheckboxProps {
+    items: itemRadio[];
+}
+
+export const TextCheckbox = (props: ITextCheckboxProps) => {
+    const { items } = props;
+
     return (
         <fieldset className={classNames(cls.radioSwitch, {}, [])}>
-            <input
-                type="radio"
-                name="switch"
-                id="item1"
-                className={cls.item1}
-            />
-            <label htmlFor="item1">Label 1</label>
-            <input
-                type="radio"
-                name="switch"
-                id="item2"
-                className={cls.item2}
-            />
-            <label htmlFor="item2">Label 2</label>
-            <input
-                type="radio"
-                name="switch"
-                id="item3"
-                className={cls.item3}
-            />
-            <label htmlFor="item3">Label 3</label>
+            {items
+                ? items.map(({ label, value }) => (
+                      <Fragment key={value}>
+                          <input
+                              type="radio"
+                              name="switch"
+                              id={value}
+                              value={value}
+                          />
+                          <label htmlFor={value}>{label}</label>
+                      </Fragment>
+                  ))
+                : null}
+
             <div className={cls.highlight}></div>
         </fieldset>
     );

@@ -1,13 +1,13 @@
 :root {
     --border-radius: 5rem;
     --primary-color: black;
-    --switch-item-number: 3;
-    --switch-padding: 5px;
+    --switch-item-number: 5;
+    --switch-padding: 0.2rem;
     --switch-bg: #fff;
     --switch-border-width: 0.1rem;
     --switch-border-color: #ccc;
     --switch-border-radius: 5rem;
-    --switch-label-padding: 1.5rem 0.5rem;
+    --switch-label-padding: 1.5rem 3rem;
     --switch-active-text-color: #fff;
     --switch-active-bg-color: #350792;
 }

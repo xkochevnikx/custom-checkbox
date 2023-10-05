@@ -7,6 +7,7 @@ export interface IForm extends FormHTMLAttributes<HTMLFormElement> {
 }
 export const Form = (props: IForm) => {
     const { children, ...otherProps } = props;
+
     return (
         <form
             className={classNames(cls.Form, {}, [])}
