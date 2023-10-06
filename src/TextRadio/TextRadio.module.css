@@ -1,7 +1,7 @@
 .radioSwitch {
     display: flex;
     position: relative;
-    width: 100%;
+    /* width: 100%; */
     border: var(--switch-border-width) solid var(--primary-color);
     background-color: var(--switch-bg);
     border-radius: var(--switch-border-radius);
@@ -17,11 +17,12 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: calc(100% / var(--switch-item-number));
+    /* width: calc(100% / var(--switch-item-number)); */
     z-index: 1;
     padding: var(--switch-label-padding);
     cursor: pointer;
     color: var(--primary-color);
+    white-space: nowrap;
 }
 
 .radioSwitch input:checked + label {
@@ -36,13 +37,14 @@
     border-radius: var(--switch-border-radius);
     transition: 300ms transform ease-in-out;
     height: calc(100% - var(--switch-padding));
-    width: calc(
+    min-width: 75px;
+    /* width: calc(
         (100% / var(--switch-item-number)) -
             calc(var(--switch-padding) / var(--switch-item-number))
-    );
+    ); */
 }
 
-.radioSwitch input:nth-of-type(2):checked ~ .highlight {
+/* .radioSwitch input:nth-of-type(2):checked ~ .highlight {
     transform: translateX(100%);
 }
 
@@ -56,9 +58,9 @@
 
 .radioSwitch input:nth-of-type(5):checked ~ .highlight {
     transform: translateX(400%);
-}
+} */
 
-@media screen and (max-width: 767px) {
+/* @media screen and (max-width: 767px) {
     .radioSwitch {
         --switch-border-radius: 15px;
         flex-direction: column;
@@ -88,4 +90,4 @@
     .radioSwitch input:nth-of-type(5):checked ~ .highlight {
         transform: translateY(400%);
     }
-}
+} */

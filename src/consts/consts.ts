@@ -1,6 +1,6 @@
 export const items = [
     {
-        label: 'string1',
+        label: 'string111111111234567890-=',
         value: 'string1',
     },
     {
