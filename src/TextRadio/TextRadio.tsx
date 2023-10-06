@@ -76,11 +76,7 @@ export const TextRadio = (props: ITextCheckboxProps) => {
                   ))
                 : null}
 
-            <div
-                style={{ width: textRefs[selectItem].current?.clientWidth }}
-                className={cls.highlight}
-                ref={selectedSlideRef}
-            ></div>
+            <div className={cls.highlight} ref={selectedSlideRef}></div>
         </fieldset>
     );
 };
