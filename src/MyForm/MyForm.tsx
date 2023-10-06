@@ -1,8 +1,8 @@
 import { FormHTMLAttributes, ReactNode } from 'react';
-import cls from './Form.module.css';
+import cls from './MyForm.module.css';
 import { classNames } from '../helpers/classnames';
 
-export interface IForm extends FormHTMLAttributes<HTMLFormElement> {
+export interface IMyForm extends FormHTMLAttributes<HTMLFormElement> {
     children: ReactNode;
 }
 
@@ -12,13 +12,13 @@ export interface IForm extends FormHTMLAttributes<HTMLFormElement> {
  *
  */
 
-export const Form = (props: IForm) => {
+export const MyForm = (props: IMyForm) => {
     const { children, onSubmit, ...otherProps } = props;
 
     return (
         <form
             onSubmit={onSubmit}
-            className={classNames(cls.Form, {}, [])}
+            className={classNames(cls.MyForm, {}, [])}
             {...otherProps}
             noValidate
         >

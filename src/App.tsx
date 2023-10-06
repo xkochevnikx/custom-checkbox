@@ -1,8 +1,8 @@
 import { MyButton, ThemeButton } from './MyButton/MyButton';
 import { classNames } from './helpers/classnames';
-import { Form } from './Form/Form';
+import { MyForm } from './MyForm/MyForm';
 import { useForm } from 'react-hook-form';
-import { TextRadio } from './TextRadio/TextRadio';
+import { MyTextRadio } from './MyTextRadio/MyTextRadio';
 import { useState } from 'react';
 import { items, label } from './consts/consts';
 
@@ -22,8 +22,8 @@ export function App() {
         <div className={classNames('container', {}, [])}>
             <h1>input radio for Igor</h1>
             <h3>value of the radio input selected {selected} </h3>
-            <Form onSubmit={onSubmit}>
-                <TextRadio
+            <MyForm onSubmit={onSubmit}>
+                <MyTextRadio
                     items={items}
                     register={register}
                     labelDesc={label}
@@ -31,7 +31,7 @@ export function App() {
                 <MyButton type="submit" theme={ThemeButton.OUTLINE}>
                     Test
                 </MyButton>
-            </Form>
+            </MyForm>
         </div>
     );
 }

@@ -6,7 +6,7 @@ import {
     useState,
 } from 'react';
 import { classNames } from '../helpers/classnames';
-import cls from './TextRadio.module.css';
+import cls from './MyTextRadio.module.css';
 import { FieldValues, UseFormRegister } from 'react-hook-form';
 import { useMoveSlide } from '../helpers/useMoveSlide';
 
@@ -15,7 +15,7 @@ type itemRadio = {
     value: string;
 };
 
-interface ITextCheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
+interface IMyTextCheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
     items: itemRadio[];
     register: UseFormRegister<FieldValues>;
     labelDesc?: string;
@@ -30,7 +30,7 @@ interface ITextCheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
  *
  */
 
-export const TextRadio = (props: ITextCheckboxProps) => {
+export const MyTextRadio = (props: IMyTextCheckboxProps) => {
     const { items, register, labelDesc = 'radio', initialState = 0 } = props;
 
     const [selectItem, setSelectItem] = useState(initialState);
