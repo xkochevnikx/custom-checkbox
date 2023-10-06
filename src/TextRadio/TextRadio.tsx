@@ -36,7 +36,7 @@ export const TextRadio = (props: ITextCheckboxProps) => {
     //! ссылка на слайдер
     const selectedSlideRef = useRef<HTMLDivElement>(null);
 
-    //! Генерируем ссылки для каждой метки
+    //! Генерируем ссылки для каждой метки на основе длинны items и вешаю на каждый label
     const textRefs = refsMap(items);
 
     //! получаю индекс выбранного элемента
@@ -45,9 +45,9 @@ export const TextRadio = (props: ITextCheckboxProps) => {
     };
 
     useEffect(() => {
-        //! получаю слайдер
+        //! получаю ссылку на слайдер
         const slider = selectedSlideRef.current;
-        //! при каждом изменении выбранного элемента получаю его координаты относительно контейнера и размер и после эти значения присваиваю
+        //! при каждом изменении выбранного элемента получаю его координаты относительно контейнера и размер и после эти значения присваиваю слайдеру
         const selectedLabel = textRefs[selectItem].current;
         if (selectedLabel && slider) {
             const { offsetLeft } = selectedLabel;
