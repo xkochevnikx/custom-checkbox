@@ -1,33 +1,23 @@
 import { RefObject } from 'react';
-import { items } from '../consts/consts';
 
 interface IuseMoveSlideProps {
     selectedSlideRef: RefObject<HTMLDivElement>;
-    textRefs: RefObject<HTMLLabelElement>[];
-    selectItem: number;
+    label: RefObject<HTMLLabelElement>;
 }
 
 export const useMoveSlide = (props: IuseMoveSlideProps) => {
-    const { selectedSlideRef, textRefs, selectItem } = props;
-    //! получаю ссылку на слайдер
-    const slider = selectedSlideRef.current;
-    //! при каждом изменении выбранного элемента получаю его координаты относительно контейнера и размер и после эти значения присваиваю слайдеру
-    const selectedLabel = textRefs[selectItem].current;
-    if (selectedLabel && slider) {
-        const { offsetLeft } = selectedLabel;
-        const { width } = selectedLabel.getBoundingClientRect();
+    const { selectedSlideRef, label } = props;
 
-        if (selectItem === 0) {
-            const left = offsetLeft + 2;
-            slider.style.left = `${left}px`;
-            slider.style.width = `${width}px`;
-        } else if (selectItem === items.length - 1) {
-            const left = offsetLeft - 2;
-            slider.style.left = `${left}px`;
-            slider.style.width = `${width}px`;
-        } else {
-            slider.style.left = `${offsetLeft}px`;
-            slider.style.width = `${width}px`;
-        }
+    //! получаю ссылку на слайдер что бы задавать ему динамические стили
+    const slider = selectedSlideRef.current;
+
+    //! при каждом изменении выбранного элемента получаю его координаты относительно контейнера и размер и после эти значения присваиваю слайдеру
+    if (label && slider) {
+        const { width, height } = label.current!.getBoundingClientRect();
+        const { offsetLeft, offsetTop } = label.current!;
+        slider.style.left = `${offsetLeft}px`;
+        slider.style.top = `${offsetTop}px`;
+        slider.style.width = `${width}px`;
+        slider.style.height = `${height}px`;
     }
 };

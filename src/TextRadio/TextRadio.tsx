@@ -9,6 +9,7 @@ import { classNames } from '../helpers/classnames';
 import cls from './TextRadio.module.css';
 import { FieldValues, UseFormRegister } from 'react-hook-form';
 import { useMoveSlide } from '../helpers/useMoveSlide';
+import { label } from '../consts/consts';
 
 type itemRadio = {
     label: string;
@@ -46,12 +47,11 @@ export const TextRadio = (props: ITextCheckboxProps) => {
     };
 
     useEffect(() => {
-        //! всю логику получения и передачи координат вынес в хелпер
         useMoveSlide({
             selectedSlideRef,
-            textRefs,
-            selectItem,
+            label: textRefs[selectItem],
         });
+        //! всю логику получения и передачи координат вынес в хелпер
     }, [sliderRef, selectItem, selectedSlideRef, textRefs]);
 
     return (

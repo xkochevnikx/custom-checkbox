@@ -31,26 +31,13 @@
 .highlight {
     position: absolute;
     background-color: var(--switch-active-bg-color);
-    top: calc(var(--switch-padding) / 2);
-    left: calc(var(--switch-padding) / 2);
     border-radius: var(--switch-border-radius);
     transition: 0.5s ease-in-out;
-    height: calc(100% - var(--switch-padding));
-    min-width: 75px;
 }
 
 @media screen and (max-width: 767px) {
     .radioSwitch {
-        --switch-border-radius: 15px;
         flex-direction: column;
-    }
-
-    .highlight,
-    .radioSwitch label {
-        width: calc(100% - var(--switch-padding));
-        height: calc(
-            (100% / var(--switch-item-number)) -
-                calc(var(--switch-padding) / var(--switch-item-number))
-        );
+        border-radius: 2.2rem;
     }
 }
