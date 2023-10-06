@@ -23,6 +23,11 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     fullWidth?: boolean;
 }
 
+/**
+ * @MyButton - компонент кнопки
+ *
+ */
+
 export const MyButton = (props: IButtonProps) => {
     const {
         className,

@@ -9,7 +9,6 @@ import { classNames } from '../helpers/classnames';
 import cls from './TextRadio.module.css';
 import { FieldValues, UseFormRegister } from 'react-hook-form';
 import { useMoveSlide } from '../helpers/useMoveSlide';
-import { label } from '../consts/consts';
 
 type itemRadio = {
     label: string;
@@ -22,6 +21,14 @@ interface ITextCheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
     labelDesc?: string;
     initialState?: number;
 }
+
+/**
+ * @TextRadio - компонент эмулирующий поведение селекта
+ * @items - массив со значениями на отрисовку
+ * @selectItem - индекс выбранного элемента
+ * @register - обработчик от react hook form
+ *
+ */
 
 export const TextRadio = (props: ITextCheckboxProps) => {
     const { items, register, labelDesc = 'radio', initialState = 0 } = props;

@@ -5,6 +5,13 @@ interface IuseMoveSlideProps {
     label: RefObject<HTMLLabelElement>;
 }
 
+/**
+ * @useMoveSlider - функция перерасчета стилей слайдера
+ * @selectedSlideRef - ссылка на слайдер
+ * @label - ссылка на выбранный элемент
+ *
+ */
+
 export const useMoveSlide = (props: IuseMoveSlideProps) => {
     const { selectedSlideRef, label } = props;
 

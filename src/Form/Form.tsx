@@ -5,6 +5,13 @@ import { classNames } from '../helpers/classnames';
 export interface IForm extends FormHTMLAttributes<HTMLFormElement> {
     children: ReactNode;
 }
+
+/**
+ * @Form - компонент формы
+ * @onSubmit - обработчик событий
+ *
+ */
+
 export const Form = (props: IForm) => {
     const { children, onSubmit, ...otherProps } = props;
 

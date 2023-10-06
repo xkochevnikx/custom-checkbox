@@ -6,6 +6,11 @@ import { TextRadio } from './TextRadio/TextRadio';
 import { useState } from 'react';
 import { items, label } from './consts/consts';
 
+/**
+ * @App - корневой компонент
+ *
+ */
+
 export function App() {
     const { handleSubmit, register } = useForm();
 

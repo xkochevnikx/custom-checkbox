@@ -1,5 +1,10 @@
 export type Mode = Record<string, boolean | string | undefined>;
 
+/**
+ * @classNames - хелпер для работы с классами
+ *
+ */
+
 export function classNames(
     cls: string,
     mods: Mode = {},
