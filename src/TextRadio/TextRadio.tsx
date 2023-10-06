@@ -46,6 +46,7 @@ export const TextRadio = (props: ITextCheckboxProps) => {
     };
 
     useEffect(() => {
+        //! всю логику получения и передачи координат вынес в хелпер
         useMoveSlide({
             selectedSlideRef,
             textRefs,
