@@ -11,10 +11,11 @@ type itemRadio = {
 interface ITextCheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
     items: itemRadio[];
     register: UseFormRegister<FieldValues>;
+    labelDesc?: string;
 }
 
 export const TextRadio = (props: ITextCheckboxProps) => {
-    const { items, register } = props;
+    const { items, register, labelDesc = 'radio' } = props;
 
     return (
         <fieldset className={classNames(cls.radioSwitch, {}, [])}>
@@ -22,7 +23,7 @@ export const TextRadio = (props: ITextCheckboxProps) => {
                 ? items.map(({ label, value }) => (
                       <Fragment key={value}>
                           <input
-                              {...register('string')}
+                              {...register(labelDesc)}
                               type="radio"
                               id={value}
                               value={value}
