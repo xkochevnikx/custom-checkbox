@@ -8,6 +8,7 @@ import {
 import { classNames } from '../helpers/classnames';
 import cls from './TextRadio.module.css';
 import { FieldValues, UseFormRegister } from 'react-hook-form';
+import { useMoveSlide } from '../helpers/useMoveSlide';
 
 type itemRadio = {
     label: string;
@@ -45,17 +46,12 @@ export const TextRadio = (props: ITextCheckboxProps) => {
     };
 
     useEffect(() => {
-        //! получаю ссылку на слайдер
-        const slider = selectedSlideRef.current;
-        //! при каждом изменении выбранного элемента получаю его координаты относительно контейнера и размер и после эти значения присваиваю слайдеру
-        const selectedLabel = textRefs[selectItem].current;
-        if (selectedLabel && slider) {
-            const { offsetLeft } = selectedLabel;
-            const { width } = selectedLabel.getBoundingClientRect();
-            slider.style.left = `${offsetLeft}px`;
-            slider.style.width = `${width}px`;
-        }
-    }, [sliderRef, selectItem]);
+        useMoveSlide({
+            selectedSlideRef,
+            textRefs,
+            selectItem,
+        });
+    }, [sliderRef, selectItem, selectedSlideRef, textRefs]);
 
     return (
         <fieldset

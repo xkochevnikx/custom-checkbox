@@ -8,7 +8,7 @@ export const items = [
         value: 'string2',
     },
     {
-        label: 'string3',
+        label: 'string3345678',
         value: 'string3',
     },
     {
@@ -18,6 +18,10 @@ export const items = [
     {
         label: 'string5',
         value: 'string5',
+    },
+    {
+        label: 'string6',
+        value: 'string6',
     },
 ];
 
