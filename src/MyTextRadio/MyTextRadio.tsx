@@ -54,11 +54,11 @@ export const MyTextRadio = (props: IMyTextCheckboxProps) => {
     };
 
     useEffect(() => {
+        //! всю логику получения и передачи координат вынес в хелпер
         useMoveSlide({
             selectedSlideRef,
             label: textRefs[selectItem],
         });
-        //! всю логику получения и передачи координат вынес в хелпер
     }, [selectItem]);
 
     return (
