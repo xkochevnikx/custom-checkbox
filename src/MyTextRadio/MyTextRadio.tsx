@@ -59,7 +59,7 @@ export const MyTextRadio = (props: IMyTextCheckboxProps) => {
             label: textRefs[selectItem],
         });
         //! всю логику получения и передачи координат вынес в хелпер
-    }, [sliderRef, selectItem, selectedSlideRef, textRefs]);
+    }, [selectItem]);
 
     return (
         <fieldset
