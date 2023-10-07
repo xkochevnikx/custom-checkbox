@@ -14,6 +14,7 @@ import { items, label } from './consts/consts';
 export function App() {
     const { handleSubmit, register } = useForm();
 
+    //сюда прилетает value из компонента
     const [selected, setSelected] = useState<string>('');
 
     const onSubmit = handleSubmit((e) => setSelected(e[label]));
