@@ -1,7 +1,7 @@
 export type Mode = Record<string, boolean | string | undefined>;
 
 /**
- * @classNames - хелпер для работы с классами
+ * @classNames - хелпер для работы с классами - легкая альтернатива популярной либе
  *
  */
 
