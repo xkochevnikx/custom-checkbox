@@ -25,7 +25,6 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 /**
  * @MyButton - компонент кнопки
- *
  */
 
 export const MyButton = (props: IButtonProps) => {

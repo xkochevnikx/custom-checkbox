@@ -27,7 +27,6 @@ interface IMyTextCheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
  * @items - массив со значениями на отрисовку
  * @selectItem - индекс выбранного элемента
  * @register - обработчик от react hook form
- *
  */
 
 export const MyTextRadio = (props: IMyTextCheckboxProps) => {

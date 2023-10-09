@@ -9,7 +9,6 @@ export interface IMyForm extends FormHTMLAttributes<HTMLFormElement> {
 /**
  * @Form - компонент формы
  * @onSubmit - обработчик событий
- *
  */
 
 export const MyForm = (props: IMyForm) => {
